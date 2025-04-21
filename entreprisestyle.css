@@ -1,0 +1,174 @@
+:root {
+    --bg-color: rgb(25, 32, 63);
+    --gold-color: darkgoldenrod;
+    --blue-color: rgb(6, 93, 163);
+    --text-color: #fff;
+    color: #162430;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: transparent;
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+}
+
+#body-scroll {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    overflow-y: auto;
+}
+#first_ajout{
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.wrapper,#first_ajout2 {
+    width: 100%;
+    max-width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label,
+.input-box input:disabled~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.insertcom, .update {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #162430;
+    font-weight: 500;
+    border-radius: 20px;
+}
+.btn:hover{
+    background: #D98032;
+    color: #fff;
+    border:solid #fff;
+}
+
+.insertcom:hover, .update:hover {
+    background: #D98032;
+    color: #fff;
+}
+
+.form-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 30px;
+    margin-right: -25px;
+}
+::-webkit-scrollbar {
+    width: 28px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    scrollbar-width:none;
+    background: transparent;
+}

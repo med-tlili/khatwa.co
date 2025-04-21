@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Khatwa</title>
+
+</head>
+<body>
+    <header id="hdr">
+        <img class="logo" src="logo.PNG" alt="Khatwa">
+        <nav class="navigation">
+            <a href="acceuil.html" target="iframe">Acceuil</a>
+            <a href="apropos.html" target="iframe">A propos</a>
+            <a href="service.html" target="iframe">Nos services</a>
+            <a href="contact.html" target="iframe">Contactez-nous</a>
+            <a href="compte.html" onclick="moncompte()" target="iframe">Mon compte</a>
+            <button class="btnentreprise-popup" onclick="document.getElementById('ifr').src='about:blank'">Entreprise</button>
+            <button class="btnclient-popup" onclick="document.getElementById('ifr').src='about:blank'">Client</button>
+            
+        </nav>
+    </header>
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box entreprise">
+            <h2>Entreprise</h2>
+            <form id="entrepriseForm">
+                <div class="input-box">
+                    <span class="icon" ><ion-icon name="business-outline"></ion-icon></span>
+                    <input id="adr_login" type="text" required>
+                    <label>Code unique d'entreprise(CUE)</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon" id="vision"><ion-icon  name="eye-off"></ion-icon></span>
+                    <input id="pass_login" type="password" required>
+                    <label>Mot de pass</label>
+                </div>
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" name="" id="">Sauvegarder
+                    </label>
+                    <a href="#">mot de pass oublier?</a>
+                </div>
+                <button type="submit" id="recherche" class="btn">Se connecter</button>
+                <div class="login-register">
+                    <p>créer un compte:<a href="#" class="register-link">Inscription</a></p>
+                </div>
+                <div class="client-login">
+                    <p>acceder tanque Client?<a href="#" class="client-link">Client</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register">
+            <div class="form-scroll">
+                <h2>Inscription</h2>
+                <form id="registerForm">
+                    <div class="input-box">
+                        <span class="icon"><img src="bank.png" width="21px" height="21px"></span>
+                        <input type="text" id="mf" required>
+                        <label>Nom de l'entreprise</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="folder-open-outline"></ion-icon></span>
+                        <input type="text" id="rc" required>
+                        <label>Registre de commerce</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
+                        <input type="text" id="cue" required>
+                        <label>Code unique d'entreprise(CUE)</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                        <input type="text" id="cnss" required>
+                        <label>Numero d'affiliation CNSS</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="keypad-outline"></ion-icon></span>
+                        <input type="text" id="tel" required>
+                        <label>Numero de téléphone</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                        <input type="text" id="fax" required>
+                        <label>Numero de fax</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="adr_register" required>
+                        <label>Address email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon" id="visionr"><ion-icon  name="eye-off"></ion-icon></span>
+                        <input id="pass_register" type="password" required>
+                        <label>Mot de pass</label>
+                    </div>
+                    <div class="accept-terme">
+                        <label>
+                            <input type="checkbox" name="" id="">Accepter les termes
+                        </label>
+                    </div>
+                    <button type="submit" id="insert" class="btn">S'inscrire</button>
+                    <div class="login-register">
+                        <p>J'ai un compte:<a href="#" class="entreprise-link">Connexion</a></p>
+                    </div>
+                    <div class="client-login">
+                        <p>acceder tanque Client?<a href="#" class="client-link c">Client</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-client">
+        <span class="icon-close c">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box client">
+            <h2>Client</h2>
+            <form id="clientForm">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="key"></ion-icon></span>
+                    <input type="text" id="code_client" required>
+                    <label>Code</label>
+                </div>
+                <div class="forgot">
+                    <a href="#">Code oublier?</a>
+                </div>
+                <button type="submit" id="cherche" class="btn">Se connecter</button>
+                <div class="entreprise-login">
+                    <p>acceder tanque Entreprise?<a href="#" class="entreprise2-link">Entreprise</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="connect.js">
+        function moncompte(){
+            if( ifr.src=="entreprise.html"){
+                ifr.src="moncompte.html";
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <section><iframe src="acceuil.html" frameborder="0" id="ifr" name="iframe"></iframe></section>
+</body>
+</html>

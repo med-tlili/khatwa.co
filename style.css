@@ -1,0 +1,304 @@
+:root{
+    --bg-color:rgb(25, 32, 63);
+    --gold-color:darkgoldenrod;
+    --blue-color:rgb(6, 93, 163);
+    --text-color:white;
+    color: #162430;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0477bf;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    background-color: #012340; ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    width: 7%;
+    height: 7%;
+    border-radius: 100%;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px;
+
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #D98032;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .4s;
+}
+.navigation a:hover{
+    color: #D98032;
+}
+.navigation a:hover:after{
+    color: #D98032;
+    transform-origin: left;
+    transform: scaleX(1);
+
+}
+.navigation button{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+.navigation button:hover{
+    background: #D98032;
+    color: var(--bg-color);
+    border: 2px solid var(--bg-color);
+}
+.wrapper,.wrapper-client{
+    position: absolute;
+    top: 20%;
+    bottom: 0;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+}
+.wrapper.entreprise{
+    transform: scale(100%);
+}
+.wrapper-client.client{
+    transform: scale(100%);
+}
+.wrapper .form-box,.wrapper-client .form-box{
+    width: 100%;
+    padding: 40px;
+}
+.wrapper .form-box.entreprise{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper.active .form-box.entreprise{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper .icon-close,.wrapper-client .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    font-size: 2em;
+    color: #162430;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    z-index: 1;
+}
+.wrapper .icon-close:hover,.wrapper-client .icon-close:hover{
+    background: #D98032;
+    color: #fff;
+}
+.form-box .form-scroll h2{
+    position: fixed;
+    top: -1px;
+    right: 110px;
+}
+
+.form-box h2{
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.wrapper-client h2{
+    position: absolute;
+    top: 70px;
+    right:40%;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 57px;
+}
+.remember-forgot,.forgot,.accept-terme{
+    font-size: .9em;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content:space-between;
+}
+.forgot{
+    justify-content: center;
+    align-items: center;
+}
+
+.remember-forgot label input,.accept-terme label input{
+    accent-color:#fff;
+    margin-right: 3px;
+}
+.remember-forgot label input:hover,.accept-terme label input:hover{
+    accent-color: #D98032;
+}
+
+.remember-forgot a,.forgot a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover,.forgot a:hover{
+    text-decoration: underline;
+    color: #D98032;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #162430;
+    font-weight: 500;
+}
+.btn:hover{
+    background-color: #D98032;
+    color: #fff;
+}
+.client-login,.login-register,.entreprise-login{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.client-login p a,.login-register p a,.entreprise-login p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.client-login p a:hover,.login-register p a:hover,.entreprise-login p a:hover{
+    text-decoration: underline;
+    color: #D98032;
+}
+.form-scroll,.body-scroll{
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 30px;
+    margin-right: -25px;
+}
+.form-scroll::-webkit-scrollbar,.body-scroll::-webkit-scrollbar  {
+    width: 8px;
+}
+.form-scroll::-webkit-scrollbar-track,.body-scroll::-webkit-scrollbar-track  {
+    background: transparent;
+}
+.form-scroll::-webkit-scrollbar-thumb,.body-scroll::-webkit-scrollbar-thumb {
+    background:transparent;
+    border-radius: 4px;
+}
+.form-scroll::-webkit-scrollbar-thumb:hover,.body-scroll::-webkit-scrollbar-thumb:hover {
+    background:transparent;
+}
+iframe{
+    padding-top: 100px;
+    width: 1000px;
+    height: 530px;
+}
